@@ -1,0 +1,87 @@
+@import "./theme/_theme.scss";
+
+$burgundy: #2d100a;
+$rose-beige-buttons: #dac4b4;
+$rose-beige: #e4d2c4;
+$text-light: #f6f3ea;
+$grey-text: #7e7e7e;
+$rose-beige-light: #fff4eb;
+$burgundy-lighter: #4b2922;
+
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter.ttf");
+}
+@font-face {
+  font-family: "Kobe1.1 bold";
+  src: url("./assets/fonts/kobe11-bold.ttf");
+}
+@font-face {
+  font-family: "Kobe1.1";
+  src: url("./assets/fonts/kobe11-regular.ttf");
+}
+
+.app-wrapper {
+  @include themed() {
+    background: t("bg");
+  }
+  .v-layout {
+    --v-scrollbar-offset: 0px;
+    display: flex;
+    box-sizing: border-box;
+    .v-main {
+      flex: 1 0 auto;
+      max-width: 100%;
+      transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  border-radius: 0 !important;
+  @include themed() {
+    -webkit-box-shadow: 0 0 0 30px t("bg") inset;
+    -webkit-text-fill-color: t("heading") !important;
+  }
+}
+
+.light-theme-btn {
+  @include themed() {
+    border: 1px solid t("button");
+    background: t("button");
+    &:hover {
+      background-color: t("text") !important;
+      border: 1px solid t("button");
+    }
+  }
+  @include themed() {
+    color: t("text");
+    &:hover {
+      color: t("button") !important;
+    }
+  }
+}
+
+.dark-theme-btn {
+  @include themed() {
+    border: 1px solid t("button");
+    background: t("button");
+    &:hover {
+      background-color: t("button") !important;
+      border: 1px solid t("text");
+    }
+  }
+  @include themed() {
+    color: t("text");
+    &:hover {
+      color: t("text") !important;
+    }
+  }
+}

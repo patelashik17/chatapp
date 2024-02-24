@@ -1,0 +1,95 @@
+@import "../../Style.scss";
+.usage-disclaimer-popup {
+  height: 100%;
+  border-radius: 38px;
+  @include themed() {
+    background: t("button");
+  }
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+
+  ol {
+    height: calc(100vh - 250px);
+    overflow-y: scroll;
+    overflow-x: none;
+    li {
+      font-weight: 700;
+      margin: 20px 0px;
+      font-size: 20px;
+      @include themed() {
+        color: t("text");
+      }
+    }
+    h3 {
+      @include themed() {
+        color: t("text");
+      }
+      font-family: "Inter";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+    ul li {
+      @include themed() {
+        color: t("text");
+      }
+      font-family: "Inter";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    ul {
+      padding-inline-start: 10px;
+      list-style-type: disc;
+
+      li::marker {
+        font-size: 20px;
+        font-weight: bold;
+        @include themed() {
+          color: t("text");
+        }
+      }
+    }
+  }
+  ol::-webkit-scrollbar {
+    width: 8px;
+    height: 199px;
+  }
+
+  ol::-webkit-scrollbar-thumb {
+    border-radius: 5.5px;
+    opacity: 0.8;
+    background: #ababab;
+  }
+  .agreement-wrapper {
+    @include themed() {
+      color: t("text");
+    }
+    font-family: "Kobe1.1";
+    font-size: 27.848px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px;
+    text-align: center;
+  }
+  .agreement-wrapper {
+    @include themed() {
+      color: t("text");
+    }
+
+    .MuiSvgIcon-root {
+      width: 30px;
+      height: 30px;
+      @include themed() {
+        color: t("text");
+      }
+    }
+  }
+}

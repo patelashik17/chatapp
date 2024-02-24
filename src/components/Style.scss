@@ -1,0 +1,510 @@
+@import "../Style.scss";
+.chat-window {
+  .MuiBox-root {
+    background: transparent;
+  }
+
+  .bot-bg {
+    @include themed() {
+      background: t("button");
+    }
+    img {
+      width: 15px;
+      height: 20px;
+    }
+    width: 33px;
+    height: 33px;
+  }
+  .circle-light {
+    border-radius: 50px;
+    background: radial-gradient(50% 50% at 50% 50%, #e4d2c4 0%, #b89589 100%);
+    width: 35px;
+    height: 35px;
+  }
+  .circle-dark {
+    border-radius: 50px;
+    background: radial-gradient(50% 50% at 50% 50%, #e4d2c4 0%, #2d100a 100%);
+    width: 35px;
+    height: 35px;
+  }
+
+  .user-name {
+    @include themed() {
+      color: t("heading");
+    }
+    font-family: Inter;
+    font-size: 13.274px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.664px;
+    align-self: flex-end;
+  }
+  .typing-text {
+    @include themed() {
+      color: t("heading");
+    }
+    font-family: Inter;
+    font-size: 13.274px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.664px;
+    margin-left: 15px;
+  }
+  .bot-chat-bg {
+    border: 0.646px solid #fff;
+    background: #fff;
+    position: relative;
+    &::after {
+      content: url("../assets/images/Union.svg");
+      position: absolute;
+      left: -9px;
+      bottom: -5px;
+    }
+
+    p {
+      @include themed() {
+        color: t("text");
+      }
+      font-family: "Inter";
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 109.867%; /* 24.171px */
+      letter-spacing: -0.11px;
+    }
+  }
+  .user-chat-bg {
+    position: relative;
+    &::after {
+      content: url("../assets/images/UnionDark.svg");
+      position: absolute;
+      right: -8px;
+      bottom: -5px;
+    }
+
+    @include themed() {
+      border: 0.646px solid t("bg");
+      background: t("button");
+      color: t("text");
+    }
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.25);
+    p {
+      font-family: "Inter";
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 109.867%;
+      letter-spacing: -0.11px;
+    }
+  }
+
+  .chat-input {
+    .input-container {
+      justify-content: center;
+      border-radius: 31.5px;
+
+      @include themed() {
+        border: 1px solid t("heading");
+      }
+
+      width: 100%;
+      margin: auto;
+      .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-fullWidth.MuiInputBase-formControl {
+        outline: none;
+        border: none;
+        @include themed() {
+          color: t("grey-text");
+        }
+        font-family: "Kobe1.1";
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        input,
+        fieldset {
+          outline: none;
+          border: none;
+        }
+      }
+      .input-grid {
+        flex-basis: 85%;
+        max-width: 85%;
+      }
+      .send-btn:focus {
+        @include themed() {
+          background: t("heading");
+        }
+      }
+      .send-btn {
+        flex-basis: 15%;
+        max-width: 15%;
+        border-radius: 31.5px;
+        button {
+          @include themed() {
+            color: t("card-bg");
+            &:hover {
+              color: t("heading");
+            }
+          }
+          @include themed() {
+            background: t("heading");
+            &:hover {
+              background: t("card-bg");
+            }
+          }
+        }
+        button,
+        button:active,
+        button:focus {
+          border-radius: 31.5px;
+          height: 100%;
+          text-align: center;
+          font-family: "Kobe1.1";
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          text-transform: lowercase;
+        }
+      }
+    }
+  }
+  .header-box {
+    div:first-child {
+      div {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .logo-icon {
+      width: 50px;
+      margin-right: 40px;
+    }
+    .day-night {
+      width: 69px;
+      height: 27px;
+      flex-shrink: 0;
+      margin-right: 40px;
+    }
+
+    .close-icon {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  .mobile-header-box {
+    visibility: hidden;
+  }
+  .end-session-btn-box {
+    padding-top: 0px !important;
+    .end-session-btn {
+      text-transform: lowercase;
+      border-radius: 18px;
+      font-size: 17px;
+      height: 24px;
+      font-weight: 500;
+      width: 97px;
+      padding: 0px;
+      border: 1px solid #dac4b4;
+      font-family: "Kobe1.1";
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      @include themed() {
+        color: t("card-bg");
+        &:hover {
+          color: t("heading");
+        }
+      }
+      @include themed() {
+        background: t("heading");
+        &:hover {
+          background: t("card-bg");
+        }
+      }
+    }
+  }
+
+  .drawer-icon {
+    @include themed() {
+      color: t("heading");
+      &:hover {
+        color: t("heading");
+      }
+    }
+  }
+}
+.drawer-close-icon {
+  width: 30px;
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  z-index: 99;
+}
+
+@media (max-width: 767px) {
+  .header-box {
+    display: none !important;
+  }
+  .chat-window {
+    .mobile-header-box {
+      display: flex;
+      padding: 33px 7px;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      padding-top: 0px;
+      visibility: visible;
+
+      div {
+        padding: 0px;
+        margin-left: 8px;
+      }
+      div:first-child {
+        gap: 10px;
+
+        align-items: center;
+        flex-grow: 1;
+        justify-content: space-between;
+        div {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+      }
+      img {
+        width: 25px;
+        height: 25px;
+      }
+      .day-night {
+        width: 49px;
+        height: 19px;
+        margin-right: 10px;
+      }
+
+      .logo-icon {
+        width: 30px;
+
+        height: 30px;
+        margin-right: 0px;
+      }
+      .close-icon {
+        width: 26px;
+        height: 26px;
+      }
+    }
+    .chat-input {
+      .input-container .send-btn {
+        button {
+          font-size: 25px;
+        }
+        flex-basis: 30%;
+        max-width: 30%;
+      }
+
+      .input-container .input-grid {
+        flex-basis: 70%;
+        max-width: 70%;
+      }
+
+      .input-container
+        .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-fullWidth.MuiInputBase-formControl {
+        font-size: 20px;
+      }
+    }
+
+    .end-session-btn {
+      text-transform: lowercase;
+      border-radius: 18px;
+      font-size: 14px;
+      font-weight: 600;
+      width: 83px;
+      padding: 0px;
+      height: 22px;
+      @include themed() {
+        border: 1px solid t("button");
+        background: t("btn-bg");
+        &:hover {
+          background-color: t("btn-bg") !important;
+          border: 1px solid t("text");
+        }
+      }
+    }
+    .user-chat-bg p,
+    .bot-chat-bg p {
+      font-size: 16.557px;
+    }
+    #chat-box {
+      min-height: calc(100svh - 150px);
+    }
+    .chatbox-wrap {
+      width: 98vw;
+      .icon-button {
+        margin-right: 6px;
+      }
+    }
+    .css-1g5j2y3 {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
+
+  .drawer-icon {
+    @include themed() {
+      color: t("heading");
+      &:hover {
+        color: t("heading");
+      }
+    }
+  }
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiDrawer-paper.MuiDrawer-paperAnchorLeft {
+  @include themed() {
+    background: t("bg");
+  }
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .logo,
+  hr {
+    display: none;
+  }
+  .menu-button {
+    margin-top: 90px;
+  }
+  .close-icon {
+    width: 30px;
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    z-index: 99;
+  }
+  .MuiButtonBase-root.MuiListItemButton-root.MuiListItemButton-gutters.MuiListItemButton-root {
+    @include themed() {
+      color: t("heading");
+    }
+
+    font-family: "Kobe1.1 bold";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    justify-content: center;
+  }
+  button {
+    border-radius: 33.128px;
+    @include themed() {
+      background: t("button");
+    }
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    font-family: "Kobe1.1 bold";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: lowercase;
+    display: block;
+    margin: 20px auto;
+    width: 120px;
+  }
+  .lets-chat-btn {
+    display: flex;
+    width: auto;
+    height: 38px;
+    flex-direction: row;
+    justify-content: center;
+    flex-shrink: 0;
+
+    @include themed() {
+      color: t("button");
+    }
+    border-radius: 30.751px;
+    @include themed() {
+      background: t("burgundy-lighter");
+    }
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 10px 15px;
+    text-align: right;
+    font-family: "Kobe1.1";
+    font-size: 23.301px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    .plus-sign {
+      width: 20px;
+      height: 3px;
+      margin-right: 10px;
+      @include themed() {
+        background-color: t("button");
+      }
+      position: relative;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 20px;
+        @include themed() {
+          background-color: t("button");
+        }
+      }
+      &::before {
+        left: 9px;
+        top: -9px;
+      }
+      &::after {
+        left: 9px;
+        top: -9px;
+      }
+    }
+
+    &:hover {
+      .plus-sign {
+        @include themed() {
+          background-color: t("button");
+        }
+        &::before {
+          @include themed() {
+            background-color: t("button");
+          }
+        }
+        &::after {
+          @include themed() {
+            background-color: t("button");
+          }
+        }
+      }
+    }
+  }
+  .lets-chat-btn:hover {
+    @include themed() {
+      color: t("button");
+    }
+  }
+  .drawer-close-icon {
+    width: 30px;
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    z-index: 99;
+  }
+
+  .drawer-logo {
+    width: 200px;
+    height: 60px;
+    margin-top: 8px;
+    img {
+      width: 100%;
+    }
+    .logoii {
+      width: auto;
+    }
+  }
+}

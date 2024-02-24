@@ -1,0 +1,125 @@
+@import "../../Style.scss";
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+  position: relative;
+
+  .number {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: 800;
+    // background-size: cover;
+    z-index: 9;
+    width: 70px;
+    height: 70px;
+    @include themed() {
+      color: t("text");
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Kobe1.1";
+    font-size: 44px;
+    font-style: normal;
+    margin: 0;
+  }
+
+  &.light-card-container {
+    .number {
+      background: radial-gradient(50% 50% at 50% 50%, #fff 0%, #dac4b4 100%);
+    }
+    .title {
+      background: linear-gradient(180deg, #dac4b4 0%, #fff7ed 100%);
+    }
+  }
+
+  &.dark-card-container {
+    .number {
+      background: radial-gradient(50% 50% at 50% 50%, #dac4b4 0%, #2d100a 100%);
+    }
+    .title {
+      background: linear-gradient(
+        180deg,
+        #dac4b4 0%,
+        rgba(218, 196, 180, 0) 100%
+      );
+    }
+  }
+
+  .show-card {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    border-radius: 17.794px;
+    @include themed() {
+      background: t("button");
+    }
+    box-shadow: 0px 5.33835px 5.33835px 0px rgba(0, 0, 0, 0.25);
+    .description {
+      @include themed() {
+        color: t("text");
+      }
+      font-family: "Inter";
+      font-size: 21px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 17.794px 17.794px 0 0;
+    padding: 15px 30px 35px;
+    margin-bottom: -20px;
+
+    h3 {
+      margin: 0;
+      font-family: "Kobe1.1";
+      font-size: 44.486px;
+      font-style: normal;
+      font-weight: 700;
+      @include themed() {
+        color: t("text");
+      }
+      line-height: normal;
+    }
+
+    img {
+      // width: 30px;
+      // margin: 0 0 10px 0;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .card-container {
+    width: 100%;
+    .show-card {
+      min-height: 100%;
+      .description {
+        font-size: 15px;
+      }
+    }
+    .number {
+      font-size: 30px;
+      width: 49px;
+      height: 49px;
+    }
+    .title {
+      h3 {
+        font-size: 30px;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import "../../Style.scss";
+.room-wrapper {
+  box-sizing: border-box;
+  height: 100vh;
+  background: var(
+    --chat-bot-gradient,
+    linear-gradient(180deg, #e9d7cb 0%, #fff4eb 100%)
+  );
+
+  .room-inner-wrapper {
+    display: flex;
+
+    align-items: center;
+
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.room-wrapper.room-wrapper-dark {
+  @include themed() {
+    background: t("text");
+  }
+}
+@media (max-width: 767px) {
+  .room-wrapper {
+    height: 100svh;
+  }
+}

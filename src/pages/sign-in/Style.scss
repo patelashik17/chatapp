@@ -1,0 +1,277 @@
+@import "../../Style.scss";
+.sign-in-wrapper {
+  box-sizing: border-box;
+  @include themed() {
+    background: t("bg");
+  }
+
+  .signin-form-wrapper {
+    display: flex;
+    // align-content: center;
+    // align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow-y: auto;
+    position: relative;
+    // justify-content: center;
+
+    a {
+      color: #000;
+    }
+
+    .logo {
+      flex-shrink: 1;
+      width: 100%;
+      padding: 50px 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: absolute;
+      z-index: 9;
+      .logo-icon {
+        width: 52px;
+        height: 60px;
+      }
+    }
+
+    .auth-form {
+      flex-grow: 1;
+      box-sizing: border-box;
+      padding: 2rem 2rem;
+      width: 100%;
+      max-width: 440px;
+      min-height: 100%;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      .title {
+        font-size: 1.6rem;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 1rem;
+        line-height: 1.6;
+      }
+      .circle-light {
+        border-radius: 145px;
+        background: radial-gradient(
+          50% 50% at 50% 50%,
+          #e4d2c4 0%,
+          #b89589 100%
+        );
+        width: 145px;
+        height: 145px;
+      }
+      .circle-dark {
+        border-radius: 145px;
+        background: radial-gradient(
+          50% 50% at 50% 50%,
+          #e4d2c4 0%,
+          #2d100a 100%
+        );
+        width: 145px;
+        height: 145px;
+      }
+
+      .description {
+        text-align: center;
+        line-height: 1.6;
+      }
+
+      .form {
+        margin-top: 2rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        row-gap: 20px;
+        font-family: "Kobe1.1";
+
+        .field-container {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+        .error-message {
+          color: #dc3545;
+          margin: 10px 0 0 20px;
+          line-height: 1;
+          text-transform: lowercase;
+        }
+
+        .MuiTextField-root {
+          width: 100%;
+          background-color: transparent;
+          border-radius: 0px;
+          outline: none;
+          @include themed() {
+            color: t("grey-text");
+          }
+          font-family: "Kobe1.1";
+          font-size: 27.848px;
+          font-style: normal;
+          font-weight: 400;
+        }
+
+        .MuiOutlinedInput-notchedOutline {
+          border-radius: 30px;
+          @include themed() {
+            border: 1px solid t("heading");
+          }
+        }
+
+        .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+          @include themed() {
+            border: 2px solid t("heading");
+          }
+          border-radius: 30px;
+        }
+        .MuiOutlinedInput-input,
+        .MuiInputLabel-outlined {
+          @include themed() {
+            color: t("grey-text");
+          }
+          font-family: "Kobe1.1";
+          font-size: 27px;
+          font-style: normal;
+          font-weight: 400;
+          height: 56px;
+          padding: 0 10px;
+        }
+        legend {
+          font-size: 21px;
+        }
+        .MuiInputLabel-outlined {
+          transform: translate(14px, 13px) scale(1);
+          &.MuiInputLabel-shrink {
+            transform: translate(10px, -7px) scale(0.73);
+          }
+        }
+        .MuiFormLabel-root.Mui-focused {
+          @include themed() {
+            color: t("heading");
+          }
+        }
+        .PrivateNotchedOutline-legendLabelled-3 > span {
+          font-size: 18px;
+        }
+        .MuiButton-contained {
+          border-radius: 30.751px;
+          @include themed() {
+            background: t("button");
+          }
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+          @include themed() {
+            color: t("text");
+          }
+          text-align: center;
+          font-family: "Kobe1.1 bold";
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+      }
+      .forget-password {
+        @include themed() {
+          color: t("grey-text");
+        }
+        width: 100%;
+        text-align: right;
+        font-family: "Kobe1.1";
+        font-size: 23.924px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      .additional-actions {
+        text-align: center;
+        margin-top: 3rem;
+        @include themed() {
+          color: t("grey-text");
+        }
+        font-family: "Kobe1.1";
+        font-size: 27.848px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .signin-form-wrapper a {
+        color: #000;
+      }
+
+      .google-wrapper {
+        padding-top: 1.5rem;
+        div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          width: 100%;
+          button {
+            cursor: pointer;
+            border-radius: 24.858px;
+            @include themed() {
+              border: 1px solid t("heading");
+              color: t("heading");
+            }
+            font-family: "Inter";
+            font-size: 23.804px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            padding: 5px 15px;
+            @include themed() {
+              background: t("bg");
+            }
+            display: flex;
+            align-items: center;
+            height: 50px;
+            gap: 10px;
+
+            img {
+              width: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .signin-form-wrapper {
+      .logo {
+        padding: 40px;
+        .logo-icon,
+        .close-icon {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      .auth-form .form {
+        .MuiButton-contained {
+          font-size: 25px;
+        }
+        .MuiOutlinedInput-input,
+        .MuiInputLabel-outlined {
+          font-size: 20px;
+        }
+        legend {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  @media (min-width: 768px) and (min-height: 640px) {
+    .signin-form-wrapper .auth-form .title {
+      font-size: 1.8rem;
+    }
+    .signin-form-wrapper .auth-form .description {
+      font-size: 18px;
+    }
+  }
+}

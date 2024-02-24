@@ -1,0 +1,339 @@
+@import "../../Style.scss";
+body,
+html {
+  overflow-x: hidden;
+  line-height: 2 !important;
+}
+.home {
+  @include themed() {
+    background: t("bg");
+  }
+  position: relative;
+  padding: 0px 100px;
+  .left-side {
+    position: absolute;
+    top: 5%;
+    left: 9%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .intro-heading {
+    width: 320px;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    @include themed() {
+      color: t("heading");
+    }
+
+    font-family: "Kobe1.1 bold";
+  }
+  .center-circle-dark {
+    background: radial-gradient(50% 50% at 50% 50%, #9f766d 0%, #2d100a 100%);
+  }
+  .center-circle-light {
+    background: radial-gradient(50% 50% at 50% 50%, #a1756c 0%, #e4d2c4 99.99%);
+  }
+  .center-circle {
+    text-align: center;
+    width: 70%;
+    margin: 50px auto 50px auto;
+    height: 936px;
+    border-radius: 936px;
+    width: 936px;
+    .half-circle {
+      display: none;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .right-side {
+    .right-side-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    span {
+      @include themed() {
+        color: t("heading");
+      }
+      font-family: "Inter";
+      font-size: 13.416px;
+      margin-left: 18px;
+    }
+  }
+  .chat-box-left {
+    padding: 10px 25px;
+    border-radius: 25px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    @include themed() {
+      border: 1px solid t("button");
+      background: t("button");
+      &:hover {
+        background-color: t("text");
+        border: 1px solid t("button");
+      }
+    }
+    @include themed() {
+      color: t("text");
+      &:hover {
+        color: t("button");
+      }
+    }
+    text-align: center;
+    text-transform: lowercase;
+    font-family: "Kobe1.1 bold";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .chat-box {
+    // width: 260px;
+    padding: 10px 12px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    @include themed() {
+      background: t("button");
+      color: t("text");
+      border: 0.653px solid t("button");
+    }
+    font-size: 22.22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 70px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin: 0;
+    font-family: "Inter";
+    position: relative;
+    &::after {
+      content: url("../../assets/images/UnionDark.svg");
+      position: absolute;
+      right: -7px;
+      bottom: -4px;
+    }
+  }
+  .chat-box-white {
+    // width: 260px;
+    padding: 10px 18px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background-color: #fff;
+    border: 0.653px solid $rose-beige-buttons;
+    @include themed() {
+      color: t("text");
+    }
+    font-size: 22.22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 70px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin: 0;
+
+    font-family: "Inter";
+    position: relative;
+    &::after {
+      content: url("../../assets/images/Union.svg");
+      position: absolute;
+      left: -7px;
+      bottom: -4px;
+    }
+  }
+  .right-side {
+    position: absolute;
+    top: 12%;
+    right: 10%;
+    .chat-box {
+      min-width: 290px;
+      font-weight: 400;
+    }
+    .gaiie-textbox {
+      position: relative;
+      right: 50%;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .card-section {
+    width: 90%;
+    margin: -400px auto auto;
+  }
+  .join-content {
+    position: relative;
+    height: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;
+    .join-bg-section {
+      position: absolute;
+      padding: 20px;
+      background: url("../../assets/images/rectangleCircle.svg") no-repeat
+        center center;
+      text-align: center;
+      min-height: 210px;
+      width: 100%;
+      top: 0;
+    }
+    .join-section {
+      position: absolute;
+      z-index: 9;
+      text-align: center;
+      div {
+        // margin-top: 30px;
+        margin-bottom: 10px;
+        img {
+          width: 131px;
+        }
+        h2 {
+          @include themed() {
+            color: t("heading");
+          }
+          text-align: center;
+          font-family: "Kobe1.1 bold";
+          font-size: 50px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          margin: 0;
+        }
+      }
+      button {
+        border-radius: 25px;
+        @include themed() {
+          background: t("button");
+        }
+        @include themed() {
+          color: t("text");
+        }
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        text-align: center;
+        text-transform: lowercase;
+        font-family: "Kobe1.1 bold";
+        font-size: 30px;
+        min-width: 218px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .home {
+    padding: 0px;
+    .intro-heading {
+      font-size: 30px;
+      width: 250px;
+    }
+    .chat-box-left {
+      font-size: 16px;
+      width: auto;
+      padding: 10px 20px;
+    }
+    .chat-box-white,
+    .chat-box {
+      font-size: 16px;
+      width: 100%;
+    }
+    .right-side {
+      .chat-box {
+        min-width: 220px;
+      }
+    }
+    .center-circle-light {
+      background: radial-gradient(
+        94% 45% at 100% 50%,
+        #a1756c 0%,
+        #e4d2c4 99.99%
+      );
+      height: 936px;
+      width: 100%;
+      border-radius: 0px;
+      top: 10px;
+      right: 0px;
+    }
+    .center-circle-dark {
+      background: radial-gradient(
+        94% 45% at 100% 50%,
+        #9f766d 0%,
+        #2d100a 100%
+      );
+      height: 936px;
+      width: 100%;
+      border-radius: 0px;
+      top: 10px;
+      right: 0px;
+    }
+    .center-circle {
+      width: 100%;
+
+      .full-circle {
+        display: none;
+      }
+      .half-circle {
+        display: block;
+      }
+    }
+    .left-side {
+      left: 9%;
+      top: 3%;
+    }
+    .right-side {
+      position: absolute;
+      top: 15%;
+      right: 30px;
+      .chat-box,
+      .chat-box-white {
+        width: 100%;
+        // padding: 8px 12px;
+      }
+      .chat-box {
+        &::after {
+          right: -7px;
+          bottom: -4px;
+        }
+      }
+      .chat-box-white {
+        &::after {
+          left: -7px;
+          bottom: -4px;
+        }
+      }
+    }
+    .card-section {
+      flex-direction: column;
+      width: 80%;
+      margin: auto;
+      position: relative;
+      top: -180px;
+    }
+    .join-content {
+      margin-top: 0;
+      margin-bottom: 150px;
+      .join-section {
+        width: 100%;
+        // margin: 0 auto 155px 0;
+        div {
+          h2 {
+            font-size: 37px;
+          }
+          img {
+            width: 100px;
+          }
+        }
+        button {
+          font-size: 22px;
+          min-width: 160px;
+        }
+      }
+    }
+  }
+}

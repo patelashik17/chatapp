@@ -1,0 +1,361 @@
+@import "../../Style.scss";
+nav {
+  @include themed() {
+    color: t("heading") !important;
+    background-color: t("bg") !important;
+  }
+  height: 92px;
+  justify-content: center;
+  // color: $burgundy !important;
+  // background-color: $rose-beige !important;
+}
+.header-bg {
+  nav {
+    @include themed() {
+      color: t("text") !important;
+      background-color: t("button") !important;
+    }
+  }
+  .header {
+    button {
+      @include themed() {
+        color: t("text");
+      }
+    }
+    .start-chat-btn {
+      @include themed() {
+        background: t("text");
+        color: t("button");
+      }
+    }
+    .desktop-hide {
+      display: none;
+    }
+  }
+}
+.header {
+  .nav-toolbar {
+    align-items: end;
+    justify-content: space-between;
+  }
+  position: static !important;
+  padding: 0 100px;
+  height: 92px;
+  box-shadow: none !important;
+  button {
+    @include themed() {
+      color: t("heading");
+    }
+    text-transform: lowercase;
+    font-family: "Kobe1.1 bold";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .login-btn {
+    border-radius: 33.128px;
+    @include themed() {
+      background: t("button");
+      color: t("text");
+    }
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    width: 128px;
+  }
+  .log-out {
+    border-radius: 33.128px;
+    @include themed() {
+      background: t("button");
+      color: t("text");
+    }
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    width: 148px;
+  }
+  .start-chat-btn {
+    display: flex;
+    // width: 138px;
+    // height: 40px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    flex-shrink: 0;
+
+    @include themed() {
+      color: t("rose-beige-light");
+    }
+    border-radius: 30.751px;
+    @include themed() {
+      background: t("bg");
+    }
+    // box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 5px 20px 5px 10px;
+    font-size: 30px;
+    // .plus-sign {
+    //   line-height: 0;
+    //   font-size: 80px;
+    //   margin-top: 30px;
+    //   margin-left: 5px;
+    // }
+    .plus-sign {
+      width: 20px;
+      height: 3px;
+      margin-left: 10px;
+      @include themed() {
+        background-color: t("button");
+      }
+      position: relative;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 20px;
+        @include themed() {
+          background-color: t("button");
+        }
+      }
+      &::before {
+        left: 9px;
+        top: -9px;
+      }
+      &::after {
+        left: 9px;
+        top: -9px;
+      }
+    }
+
+    &:hover {
+      .plus-sign {
+        @include themed() {
+          background-color: t("text");
+        }
+        &::before {
+          @include themed() {
+            background-color: t("text");
+          }
+        }
+        &::after {
+          @include themed() {
+            background-color: t("text");
+          }
+        }
+      }
+    }
+  }
+  .start-chat-btn:hover {
+    @include themed() {
+      color: t("button");
+    }
+  }
+  .logo {
+    width: 200px;
+    height: 60px;
+    margin-top: 8px;
+    img {
+      width: 100%;
+    }
+    .logoii {
+      width: auto;
+    }
+  }
+  .navRight {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 25px;
+    align-items: center;
+    &.margin-y-auto {
+      margin: auto 0;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 50px;
+    .navRight {
+      column-gap: 10px;
+    }
+  }
+}
+@media (max-width: 901px) {
+  .header {
+    padding: 0px 50px;
+    .navRight {
+      display: none;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .header-bg {
+    .logo {
+      width: 120px;
+      height: auto;
+    }
+    .header .MuiToolbar-regular .start-chat-btn.MuiButtonBase-root {
+      padding: 7px 10px;
+      display: flex;
+      margin-left: auto;
+      align-items: center;
+    }
+  }
+
+  .header {
+    padding: 40px 30px;
+    .nav-toolbar {
+      align-items: center;
+    }
+    .MuiToolbar-regular {
+      justify-content: space-between;
+      padding: 0px;
+      gap: 20px;
+
+      svg.MuiSvgIcon-root {
+        width: 2em;
+        height: 2em;
+      }
+      .logo,
+      button.MuiButtonBase-root {
+        margin-right: 0px;
+        padding: 0;
+        height: 50px;
+      }
+    }
+    .navRight {
+      display: none;
+    }
+  }
+
+  .MuiPaper-root.MuiPaper-elevation.MuiDrawer-paper.MuiDrawer-paperAnchorLeft {
+    @include themed() {
+      background: t("bg");
+    }
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .logo,
+    hr {
+      display: none;
+    }
+    .menu-button {
+      margin-top: 90px;
+    }
+    .close-icon {
+      width: 30px;
+      position: absolute;
+      top: 50px;
+      right: 30px;
+      z-index: 99;
+    }
+    .MuiButtonBase-root.MuiListItemButton-root.MuiListItemButton-gutters.MuiListItemButton-root {
+      @include themed() {
+        color: t("heading");
+      }
+
+      font-family: "Kobe1.1 bold";
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      justify-content: center;
+    }
+    button {
+      border-radius: 33.128px;
+      @include themed() {
+        background: t("button");
+      }
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      font-family: "Kobe1.1 bold";
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: lowercase;
+      display: block;
+      margin: 20px auto;
+      width: 120px;
+    }
+    .lets-chat-btn {
+      display: flex;
+      width: auto;
+      height: 38px;
+      flex-direction: row;
+      justify-content: center;
+      flex-shrink: 0;
+
+      @include themed() {
+        color: t("button");
+      }
+      border-radius: 30.751px;
+      @include themed() {
+        background: t("burgundy-lighter");
+      }
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      padding: 10px 15px;
+      text-align: right;
+      font-family: "Kobe1.1";
+      font-size: 23.301px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      // img {
+      //   width: 22px;
+      //   height: 22px;
+      //   margin-right: 10px;
+      // }
+      .plus-sign {
+        width: 20px;
+        height: 3px;
+        margin-right: 10px;
+        @include themed() {
+          background-color: t("button");
+        }
+        position: relative;
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          width: 3px;
+          height: 20px;
+          @include themed() {
+            background-color: t("button");
+          }
+        }
+        &::before {
+          left: 9px;
+          top: -9px;
+        }
+        &::after {
+          left: 9px;
+          top: -9px;
+        }
+      }
+
+      &:hover {
+        .plus-sign {
+          @include themed() {
+            background-color: t("button");
+          }
+          &::before {
+            @include themed() {
+              background-color: t("button");
+            }
+          }
+          &::after {
+            @include themed() {
+              background-color: t("button");
+            }
+          }
+        }
+      }
+    }
+    .lets-chat-btn:hover {
+      @include themed() {
+        color: t("button");
+      }
+    }
+  }
+}

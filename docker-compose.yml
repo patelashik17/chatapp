@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  nodeserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/www/.well-known/pki-validation:/var/www/.well-known/pki-validation
+      - /etc/ssl/gaia:/etc/ssl/gaia

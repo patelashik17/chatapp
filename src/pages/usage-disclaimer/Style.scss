@@ -1,0 +1,95 @@
+@import "../../Style.scss";
+.usage-disclaimer {
+  background: $rose-beige-light;
+  padding: 40px 100px;
+  h1 {
+    color: $burgundy;
+    font-family: "Kobe1.1";
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 50px 0px 50px 13px;
+  }
+  ol {
+    li {
+      font-weight: 700;
+      margin: 20px 0px;
+      font-size: 20px;
+
+      h3 {
+        color: $burgundy;
+        font-family: "Inter";
+
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 0;
+      }
+      p {
+        font-weight: 400;
+        font-family: "Inter";
+        font-size: 20px;
+        margin: 0px;
+        margin-left: -18px;
+      }
+    }
+  }
+  ul {
+    padding: 0px;
+    list-style-type: disc;
+    li {
+      font-weight: 400;
+      font-size: 20px;
+      margin: 0px;
+    }
+    li::marker {
+      font-size: 20px;
+      font-weight: bold;
+      color: $burgundy;
+    }
+  }
+  p {
+    color: $burgundy;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    line-height: normal;
+    margin: 0px 0px 0px 15px;
+  }
+}
+@media (max-width: 768px) {
+  .usage-disclaimer {
+    padding: 20px;
+    h1 {
+      font-size: 40px;
+      margin: 10px auto;
+    }
+    ol {
+      padding-inline-start: 20px;
+      li {
+        font-size: 14.678px;
+        h3 {
+          font-size: 14.678px;
+        }
+        p {
+          font-size: 13.21px;
+          a {
+            font-size: 14.678px;
+          }
+        }
+      }
+      ul {
+        padding-inline-start: 8px;
+        li {
+          font-size: 13.21px;
+          line-height: 18px;
+        }
+      }
+    }
+    p {
+      font-size: 13.21px;
+    }
+  }
+}
